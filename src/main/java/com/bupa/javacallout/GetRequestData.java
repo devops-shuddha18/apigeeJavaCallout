@@ -7,11 +7,10 @@ import com.apigee.flow.message.MessageContext;
 
 import java.io.InputStream;
 import java.util.Map;
-import java.util.Set;
 import java.util.TreeMap;
 import java.util.Scanner;
 
-public class ApigeeCallout implements Execution {
+public class GetRequestData implements Execution {
 
     @Override
     public ExecutionResult execute(MessageContext messageContext, ExecutionContext executionContext) {
