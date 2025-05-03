@@ -5,8 +5,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.bupa</groupId>
-    <artifactId>hello-JavaCallout</artifactId>
+    <artifactId>Msg-JavaCallout</artifactId>
     <version>1.1</version>
+
+    <repositories>
+        <repository>
+            <id>artifact-registry</id>
+            <url>https://us-maven.pkg.dev/apigee-release/apigee-java-callout-dependencies</url>
+        </repository>
+    </repositories>
     <dependencies>
         <dependency>
             <groupId>com.apigee.gateway.libraries</groupId>
