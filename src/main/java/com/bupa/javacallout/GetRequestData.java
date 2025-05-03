@@ -21,12 +21,11 @@ public class GetRequestData implements Execution {
                 headers.put(headerName, messageContext.getMessage().getHeader(headerName));
             }
 
-            /*// Get query parameters
+            // Get query parameters
             Map<String, String> queryParams = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
-            Set<String> paramNames = messageContext.getMessage().getQueryParams().getParameterNames();
-            for (String param : paramNames) {
-                queryParams.put(param, messageContext.getMessage().getQueryParams().get(param));
-            }*/
+            for (String param : messageContext.getMessage().getQueryParamNames()) {
+                queryParams.put(param, messageContext.getMessage().getQueryParam(param));
+            }
 
             // Get request body as string
             InputStream inStream = messageContext.getMessage().getContentAsStream();
@@ -34,7 +33,7 @@ public class GetRequestData implements Execution {
 
             // Log all the data (or set it as variables if you prefer)
             messageContext.setVariable("javaCallout.headers", headers.toString());
-            //messageContext.setVariable("javaCallout.queryParams", queryParams.toString());
+            messageContext.setVariable("javaCallout.queryParams", queryParams.toString());
             messageContext.setVariable("javaCallout.body", body);
 
             return ExecutionResult.SUCCESS;
