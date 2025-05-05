@@ -15,7 +15,8 @@ public class GrpcCallout implements Execution {
 
     @Override
     public ExecutionResult execute(MessageContext messageContext, ExecutionContext executionContext) {
-        String topicId = messageContext.getVariable("topic.id").toString();
+        //String topicId = messageContext.getVariable("topic.id").toString();
+        String topicId = "GetTopic";
 
         ManagedChannel channel = null;
         try {
