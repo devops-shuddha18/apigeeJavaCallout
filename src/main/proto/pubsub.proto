@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package pubsub;
+
+option java_package = "pubsub";
+option java_multiple_files = true;
+
+service PubSubService {
+  rpc GetTopic(GetTopicRequest) returns (GetTopicResponse);
+}
+
+message GetTopicRequest {
+  string topic_id = 1;
+}
+
+message GetTopicResponse {
+  string name = 1;
+  string description = 2;
+}
