@@ -16,7 +16,7 @@ public class GrpcCallout implements Execution {
     @Override
     public ExecutionResult execute(MessageContext messageContext, ExecutionContext executionContext) {
         //String topicId = messageContext.getVariable("topic.id").toString();
-        String topicId = "GetTopic";
+        String topic_name = "/event/Account_Updated__e";
 
         ManagedChannel channel = null;
         try {
@@ -28,14 +28,14 @@ public class GrpcCallout implements Execution {
             PubSubServiceBlockingStub stub = PubSubServiceGrpc.newBlockingStub(channel);
 
             GetTopicRequest request = GetTopicRequest.newBuilder()
-                    .setTopicId(topicId)
+                    .setTopicName(topic_name)
                     .build();
 
             GetTopicResponse response = stub.getTopic(request);
 
             // Set response variables to Apigee context
-            messageContext.setVariable("grpc.topic.name", response.getName());
-            messageContext.setVariable("grpc.topic.description", response.getDescription());
+            messageContext.setVariable("grpc.topic.name", response.getSchemaId());
+            messageContext.setVariable("grpc.topic.description", response.getTopicName());
 
             return ExecutionResult.SUCCESS;
         } catch (Exception e) {

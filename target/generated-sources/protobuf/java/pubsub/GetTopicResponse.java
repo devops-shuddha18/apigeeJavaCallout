@@ -17,8 +17,10 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GetTopicResponse() {
-    name_ = "";
-    description_ = "";
+    schemaId_ = "";
+    topicName_ = "";
+    canPublish_ = "";
+    rpcId_ = "";
   }
 
   @java.lang.Override
@@ -41,78 +43,156 @@ private static final long serialVersionUID = 0L;
             pubsub.GetTopicResponse.class, pubsub.GetTopicResponse.Builder.class);
   }
 
-  public static final int NAME_FIELD_NUMBER = 1;
+  public static final int SCHEMA_ID_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object name_ = "";
+  private volatile java.lang.Object schemaId_ = "";
   /**
-   * <code>string name = 1;</code>
-   * @return The name.
+   * <code>string schema_id = 1;</code>
+   * @return The schemaId.
    */
   @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
+  public java.lang.String getSchemaId() {
+    java.lang.Object ref = schemaId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      name_ = s;
+      schemaId_ = s;
       return s;
     }
   }
   /**
-   * <code>string name = 1;</code>
-   * @return The bytes for name.
+   * <code>string schema_id = 1;</code>
+   * @return The bytes for schemaId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
+      getSchemaIdBytes() {
+    java.lang.Object ref = schemaId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      name_ = b;
+      schemaId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 2;
+  public static final int TOPIC_NAME_FIELD_NUMBER = 2;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object description_ = "";
+  private volatile java.lang.Object topicName_ = "";
   /**
-   * <code>string description = 2;</code>
-   * @return The description.
+   * <code>string topic_name = 2;</code>
+   * @return The topicName.
    */
   @java.lang.Override
-  public java.lang.String getDescription() {
-    java.lang.Object ref = description_;
+  public java.lang.String getTopicName() {
+    java.lang.Object ref = topicName_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      description_ = s;
+      topicName_ = s;
       return s;
     }
   }
   /**
-   * <code>string description = 2;</code>
-   * @return The bytes for description.
+   * <code>string topic_name = 2;</code>
+   * @return The bytes for topicName.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getDescriptionBytes() {
-    java.lang.Object ref = description_;
+      getTopicNameBytes() {
+    java.lang.Object ref = topicName_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      description_ = b;
+      topicName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CAN_PUBLISH_FIELD_NUMBER = 3;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object canPublish_ = "";
+  /**
+   * <code>string can_publish = 3;</code>
+   * @return The canPublish.
+   */
+  @java.lang.Override
+  public java.lang.String getCanPublish() {
+    java.lang.Object ref = canPublish_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      canPublish_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string can_publish = 3;</code>
+   * @return The bytes for canPublish.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCanPublishBytes() {
+    java.lang.Object ref = canPublish_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      canPublish_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int RPC_ID_FIELD_NUMBER = 4;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object rpcId_ = "";
+  /**
+   * <code>string rpc_id = 4;</code>
+   * @return The rpcId.
+   */
+  @java.lang.Override
+  public java.lang.String getRpcId() {
+    java.lang.Object ref = rpcId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      rpcId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string rpc_id = 4;</code>
+   * @return The bytes for rpcId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getRpcIdBytes() {
+    java.lang.Object ref = rpcId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      rpcId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -133,11 +213,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schemaId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, schemaId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topicName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, topicName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(canPublish_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, canPublish_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rpcId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, rpcId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -148,11 +234,17 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schemaId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, schemaId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topicName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, topicName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(canPublish_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, canPublish_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rpcId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, rpcId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -169,10 +261,14 @@ private static final long serialVersionUID = 0L;
     }
     pubsub.GetTopicResponse other = (pubsub.GetTopicResponse) obj;
 
-    if (!getName()
-        .equals(other.getName())) return false;
-    if (!getDescription()
-        .equals(other.getDescription())) return false;
+    if (!getSchemaId()
+        .equals(other.getSchemaId())) return false;
+    if (!getTopicName()
+        .equals(other.getTopicName())) return false;
+    if (!getCanPublish()
+        .equals(other.getCanPublish())) return false;
+    if (!getRpcId()
+        .equals(other.getRpcId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -184,10 +280,14 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
+    hash = (37 * hash) + SCHEMA_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getSchemaId().hashCode();
+    hash = (37 * hash) + TOPIC_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getTopicName().hashCode();
+    hash = (37 * hash) + CAN_PUBLISH_FIELD_NUMBER;
+    hash = (53 * hash) + getCanPublish().hashCode();
+    hash = (37 * hash) + RPC_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRpcId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -319,8 +419,10 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      name_ = "";
-      description_ = "";
+      schemaId_ = "";
+      topicName_ = "";
+      canPublish_ = "";
+      rpcId_ = "";
       return this;
     }
 
@@ -355,10 +457,16 @@ private static final long serialVersionUID = 0L;
     private void buildPartial0(pubsub.GetTopicResponse result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.name_ = name_;
+        result.schemaId_ = schemaId_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.description_ = description_;
+        result.topicName_ = topicName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.canPublish_ = canPublish_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.rpcId_ = rpcId_;
       }
     }
 
@@ -406,14 +514,24 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(pubsub.GetTopicResponse other) {
       if (other == pubsub.GetTopicResponse.getDefaultInstance()) return this;
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
+      if (!other.getSchemaId().isEmpty()) {
+        schemaId_ = other.schemaId_;
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (!other.getDescription().isEmpty()) {
-        description_ = other.description_;
+      if (!other.getTopicName().isEmpty()) {
+        topicName_ = other.topicName_;
         bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (!other.getCanPublish().isEmpty()) {
+        canPublish_ = other.canPublish_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (!other.getRpcId().isEmpty()) {
+        rpcId_ = other.rpcId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -443,15 +561,25 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 10: {
-              name_ = input.readStringRequireUtf8();
+              schemaId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
               break;
             } // case 10
             case 18: {
-              description_ = input.readStringRequireUtf8();
+              topicName_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
               break;
             } // case 18
+            case 26: {
+              canPublish_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 26
+            case 34: {
+              rpcId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 34
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -469,146 +597,290 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.lang.Object name_ = "";
+    private java.lang.Object schemaId_ = "";
     /**
-     * <code>string name = 1;</code>
-     * @return The name.
+     * <code>string schema_id = 1;</code>
+     * @return The schemaId.
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getSchemaId() {
+      java.lang.Object ref = schemaId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        schemaId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string name = 1;</code>
-     * @return The bytes for name.
+     * <code>string schema_id = 1;</code>
+     * @return The bytes for schemaId.
      */
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
+        getSchemaIdBytes() {
+      java.lang.Object ref = schemaId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name_ = b;
+        schemaId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string name = 1;</code>
-     * @param value The name to set.
+     * <code>string schema_id = 1;</code>
+     * @param value The schemaId to set.
      * @return This builder for chaining.
      */
-    public Builder setName(
+    public Builder setSchemaId(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      name_ = value;
+      schemaId_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>string name = 1;</code>
+     * <code>string schema_id = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearName() {
-      name_ = getDefaultInstance().getName();
+    public Builder clearSchemaId() {
+      schemaId_ = getDefaultInstance().getSchemaId();
       bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
     /**
-     * <code>string name = 1;</code>
-     * @param value The bytes for name to set.
+     * <code>string schema_id = 1;</code>
+     * @param value The bytes for schemaId to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(
+    public Builder setSchemaIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      name_ = value;
+      schemaId_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
-    private java.lang.Object description_ = "";
+    private java.lang.Object topicName_ = "";
     /**
-     * <code>string description = 2;</code>
-     * @return The description.
+     * <code>string topic_name = 2;</code>
+     * @return The topicName.
      */
-    public java.lang.String getDescription() {
-      java.lang.Object ref = description_;
+    public java.lang.String getTopicName() {
+      java.lang.Object ref = topicName_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        description_ = s;
+        topicName_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string description = 2;</code>
-     * @return The bytes for description.
+     * <code>string topic_name = 2;</code>
+     * @return The bytes for topicName.
      */
     public com.google.protobuf.ByteString
-        getDescriptionBytes() {
-      java.lang.Object ref = description_;
+        getTopicNameBytes() {
+      java.lang.Object ref = topicName_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        description_ = b;
+        topicName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string description = 2;</code>
-     * @param value The description to set.
+     * <code>string topic_name = 2;</code>
+     * @param value The topicName to set.
      * @return This builder for chaining.
      */
-    public Builder setDescription(
+    public Builder setTopicName(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      description_ = value;
+      topicName_ = value;
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>string description = 2;</code>
+     * <code>string topic_name = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearDescription() {
-      description_ = getDefaultInstance().getDescription();
+    public Builder clearTopicName() {
+      topicName_ = getDefaultInstance().getTopicName();
       bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
     /**
-     * <code>string description = 2;</code>
-     * @param value The bytes for description to set.
+     * <code>string topic_name = 2;</code>
+     * @param value The bytes for topicName to set.
      * @return This builder for chaining.
      */
-    public Builder setDescriptionBytes(
+    public Builder setTopicNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      description_ = value;
+      topicName_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object canPublish_ = "";
+    /**
+     * <code>string can_publish = 3;</code>
+     * @return The canPublish.
+     */
+    public java.lang.String getCanPublish() {
+      java.lang.Object ref = canPublish_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        canPublish_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string can_publish = 3;</code>
+     * @return The bytes for canPublish.
+     */
+    public com.google.protobuf.ByteString
+        getCanPublishBytes() {
+      java.lang.Object ref = canPublish_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        canPublish_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string can_publish = 3;</code>
+     * @param value The canPublish to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCanPublish(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      canPublish_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string can_publish = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCanPublish() {
+      canPublish_ = getDefaultInstance().getCanPublish();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string can_publish = 3;</code>
+     * @param value The bytes for canPublish to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCanPublishBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      canPublish_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object rpcId_ = "";
+    /**
+     * <code>string rpc_id = 4;</code>
+     * @return The rpcId.
+     */
+    public java.lang.String getRpcId() {
+      java.lang.Object ref = rpcId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rpcId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string rpc_id = 4;</code>
+     * @return The bytes for rpcId.
+     */
+    public com.google.protobuf.ByteString
+        getRpcIdBytes() {
+      java.lang.Object ref = rpcId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        rpcId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string rpc_id = 4;</code>
+     * @param value The rpcId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRpcId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      rpcId_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string rpc_id = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRpcId() {
+      rpcId_ = getDefaultInstance().getRpcId();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string rpc_id = 4;</code>
+     * @param value The bytes for rpcId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRpcIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      rpcId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

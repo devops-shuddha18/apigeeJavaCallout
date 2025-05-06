@@ -6,7 +6,7 @@
 
     <groupId>com.example.apigee</groupId>
     <artifactId>grpc-java-callout</artifactId>
-    <version>1.1</version>
+    <version>1.0</version>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>

@@ -9,14 +9,14 @@ public interface GetTopicRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string topic_id = 1;</code>
-   * @return The topicId.
+   * <code>string topic_name = 1;</code>
+   * @return The topicName.
    */
-  java.lang.String getTopicId();
+  java.lang.String getTopicName();
   /**
-   * <code>string topic_id = 1;</code>
-   * @return The bytes for topicId.
+   * <code>string topic_name = 1;</code>
+   * @return The bytes for topicName.
    */
   com.google.protobuf.ByteString
-      getTopicIdBytes();
+      getTopicNameBytes();
 }

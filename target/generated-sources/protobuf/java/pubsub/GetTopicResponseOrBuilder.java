@@ -9,26 +9,50 @@ public interface GetTopicResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string name = 1;</code>
-   * @return The name.
+   * <code>string schema_id = 1;</code>
+   * @return The schemaId.
    */
-  java.lang.String getName();
+  java.lang.String getSchemaId();
   /**
-   * <code>string name = 1;</code>
-   * @return The bytes for name.
+   * <code>string schema_id = 1;</code>
+   * @return The bytes for schemaId.
    */
   com.google.protobuf.ByteString
-      getNameBytes();
+      getSchemaIdBytes();
 
   /**
-   * <code>string description = 2;</code>
-   * @return The description.
+   * <code>string topic_name = 2;</code>
+   * @return The topicName.
    */
-  java.lang.String getDescription();
+  java.lang.String getTopicName();
   /**
-   * <code>string description = 2;</code>
-   * @return The bytes for description.
+   * <code>string topic_name = 2;</code>
+   * @return The bytes for topicName.
    */
   com.google.protobuf.ByteString
-      getDescriptionBytes();
+      getTopicNameBytes();
+
+  /**
+   * <code>string can_publish = 3;</code>
+   * @return The canPublish.
+   */
+  java.lang.String getCanPublish();
+  /**
+   * <code>string can_publish = 3;</code>
+   * @return The bytes for canPublish.
+   */
+  com.google.protobuf.ByteString
+      getCanPublishBytes();
+
+  /**
+   * <code>string rpc_id = 4;</code>
+   * @return The rpcId.
+   */
+  java.lang.String getRpcId();
+  /**
+   * <code>string rpc_id = 4;</code>
+   * @return The bytes for rpcId.
+   */
+  com.google.protobuf.ByteString
+      getRpcIdBytes();
 }
