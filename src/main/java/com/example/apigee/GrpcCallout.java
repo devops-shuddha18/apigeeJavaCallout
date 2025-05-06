@@ -32,6 +32,7 @@ public class GrpcCallout implements Execution {
                     .build();
 
             GetTopicResponse response = stub.getTopic(request);
+            System.out.println("Received from gRPC: " + response);
 
             // Set response variables to Apigee context
             messageContext.setVariable("grpc.topic.name", response.getSchemaId());
@@ -39,7 +40,8 @@ public class GrpcCallout implements Execution {
 
             return ExecutionResult.SUCCESS;
         } catch (Exception e) {
-            messageContext.setVariable("grpc.error", e.getMessage());
+            messageContext.setVariable("grpc.error", e.toString());
+            e.printStackTrace();
             return ExecutionResult.ABORT;
         } finally {
             if (channel != null) {
