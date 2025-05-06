@@ -15,33 +15,30 @@ public class GrpcCallout implements Execution {
 
     @Override
     public ExecutionResult execute(MessageContext messageContext, ExecutionContext executionContext) {
-        //String topicId = messageContext.getVariable("topic.id").toString();
-        String topic_name = "/event/Account_Updated__e";
+        String topicName = "/event/Account_Updated__e";
 
         ManagedChannel channel = null;
         try {
-            channel = ManagedChannelBuilder
-                    .forAddress("api.pubsub.salesforce.com", 7443)
+            channel = ManagedChannelBuilder.forAddress("api.pubsub.salesforce.com", 7443)
                     .useTransportSecurity()
                     .build();
 
             PubSubServiceBlockingStub stub = PubSubServiceGrpc.newBlockingStub(channel);
 
             GetTopicRequest request = GetTopicRequest.newBuilder()
-                    .setTopicName(topic_name)
+                    .setTopicName(topicName)
                     .build();
 
             GetTopicResponse response = stub.getTopic(request);
-            System.out.println("Received from gRPC: " + response);
 
-            // Set response variables to Apigee context
-            messageContext.setVariable("grpc.topic.name", response.getSchemaId());
-            messageContext.setVariable("grpc.topic.description", response.getTopicName());
+            messageContext.setVariable("grpc.topic.schema_id", response.getSchemaId());
+            messageContext.setVariable("grpc.topic.name", response.getTopicName());
+            messageContext.setVariable("grpc.topic.can_publish", response.getCanPublish());
+            messageContext.setVariable("grpc.topic.rpc_id", response.getRpcId());
 
             return ExecutionResult.SUCCESS;
         } catch (Exception e) {
             messageContext.setVariable("grpc.error", e.toString());
-            e.printStackTrace();
             return ExecutionResult.ABORT;
         } finally {
             if (channel != null) {
