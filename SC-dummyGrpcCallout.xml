@@ -2,7 +2,6 @@
     <DisplayName>Call gRPC GetTopic</DisplayName>
     <Timeout>60000</Timeout>
     <Request>
-        <TargetEndpoint>grpc-target</TargetEndpoint>
         <Service>Salesforce.PubSub.API</Service>
         <Method>GetTopic</Method>
         <Payload contentType="application/json">
@@ -15,4 +14,8 @@
         </Headers>
     </Request>
     <Response>calloutGrpcResponse</Response>
+    <HTTPTargetConnection>
+        <URL>grpc://api.pubsub.salesforce.com:7443</URL>
+        <Protocol>GRPC</Protocol>
+    </HTTPTargetConnection>
 </ServiceCallout>
