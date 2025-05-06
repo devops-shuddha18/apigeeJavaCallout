@@ -1,0 +1,18 @@
+<ServiceCallout name="Call-gRPC-GetTopic" enabled="true" continueOnError="false">
+    <DisplayName>Call gRPC GetTopic</DisplayName>
+    <Timeout>60000</Timeout>
+    <Request>
+        <TargetEndpoint>grpc-target</TargetEndpoint>
+        <Service>Salesforce.PubSub.API</Service>
+        <Method>GetTopic</Method>
+        <Payload contentType="application/json">
+            {
+              "topic_name": "{request.queryparam.topicName}"
+            }
+        </Payload>
+        <Headers>
+            <Header name="Authorization">Bearer {flow.salesforce_access_token}</Header>
+        </Headers>
+    </Request>
+    <Response>calloutGrpcResponse</Response>
+</ServiceCallout>
