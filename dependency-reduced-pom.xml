@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.example.apigee</groupId>
+  <groupId>com.example</groupId>
   <artifactId>grpc-java-callout</artifactId>
-  <version>1.0</version>
+  <version>1.0.0</version>
   <build>
-    <sourceDirectory>src/main/java</sourceDirectory>
     <extensions>
       <extension>
         <groupId>kr.motd.maven</groupId>
         <artifactId>os-maven-plugin</artifactId>
-        <version>1.7.0</version>
+        <version>1.7.1</version>
       </extension>
     </extensions>
-    <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-      </resource>
-    </resources>
     <plugins>
       <plugin>
         <groupId>org.xolstice.maven.plugins</groupId>
@@ -32,22 +26,14 @@
           </execution>
         </executions>
         <configuration>
-          <protocArtifact>com.google.protobuf:protoc:3.25.3:exe:osx-aarch_64</protocArtifact>
+          <protocArtifact>com.google.protobuf:protoc:3.25.5:exe:osx-aarch_64</protocArtifact>
           <pluginId>grpc-java</pluginId>
-          <pluginArtifact>io.grpc:protoc-gen-grpc-java:1.62.2:exe:osx-aarch_64</pluginArtifact>
-        </configuration>
-      </plugin>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.10.1</version>
-        <configuration>
-          <source>11</source>
-          <target>11</target>
+          <pluginArtifact>io.grpc:protoc-gen-grpc-java:1.72.0:exe:osx-aarch_64</pluginArtifact>
         </configuration>
       </plugin>
       <plugin>
         <artifactId>maven-shade-plugin</artifactId>
-        <version>3.5.1</version>
+        <version>3.5.0</version>
         <executions>
           <execution>
             <phase>package</phase>
@@ -55,30 +41,20 @@
               <goal>shade</goal>
             </goals>
             <configuration>
-              <createDependencyReducedPom>true</createDependencyReducedPom>
               <minimizeJar>true</minimizeJar>
               <filters>
                 <filter>
                   <artifact>*:*</artifact>
-                  <includes>
-                    <include>io/grpc/**</include>
-                    <include>com/google/**</include>
-                    <include>pubsub/**</include>
-                    <include>META-INF/services/**</include>
-                  </includes>
+                  <excludes>
+                    <exclude>META-INF/*.SF</exclude>
+                    <exclude>META-INF/*.DSA</exclude>
+                    <exclude>META-INF/*.RSA</exclude>
+                  </excludes>
                 </filter>
               </filters>
-              <transformers>
-                <transformer />
-              </transformers>
             </configuration>
           </execution>
         </executions>
-      </plugin>
-      <plugin>
-        <groupId>kr.motd.maven</groupId>
-        <artifactId>os-maven-plugin</artifactId>
-        <version>1.7.0</version>
       </plugin>
     </plugins>
   </build>
