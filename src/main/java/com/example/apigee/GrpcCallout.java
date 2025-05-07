@@ -35,7 +35,8 @@ public class GrpcCallout implements Execution {
             messageContext.setVariable("grpc.can_publish", response.getCanPublish());
             messageContext.setVariable("grpc.rpc_id", response.getRpcId());
         } catch (Exception e) {
-            messageContext.setVariable("grpc.error", e.getMessage());
+            messageContext.setVariable("grpc.error", e.toString());
+            messageContext.setVariable("grpc.stacktrace", org.apache.commons.lang3.exception.ExceptionUtils.getStackTrace(e));
             return ExecutionResult.ABORT;
         } finally {
             channel.shutdown();
