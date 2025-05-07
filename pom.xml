@@ -126,7 +126,7 @@
                                 <exclude>io/netty/handler/logging/**</exclude>
                                 <exclude>**/util/**</exclude>
                                 <exclude>**/tests/**</exclude> <!-- Exclude any test classes -->
-<!--                                <exclude>**/protobuf/**</exclude> &lt;!&ndash; You can also exclude unused Protobuf classes &ndash;&gt;-->
+                               <exclude>**/protobuf/**</exclude> &lt;!&ndash; You can also exclude unused Protobuf classes &ndash;&gt;
                             </excludes>
                         </filter>
                     </filters>
