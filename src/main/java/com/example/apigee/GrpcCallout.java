@@ -18,7 +18,7 @@ public class GrpcCallout implements Execution {
         String topicName = "/data/AccountChangeEvent";
 
         ManagedChannel channel = ManagedChannelBuilder
-                .forAddress("grpc://api.pubsub.salesforce.com", 7443)
+                .forAddress("api.pubsub.salesforce.com", 7443)
                 .useTransportSecurity()
                 .build();
 
